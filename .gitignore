@@ -1,0 +1,19 @@
+# Downloaded videos (each in their own folder)
+*/
+
+# Temp download parts
+.ytdl_temp/
+
+# Python cache
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Virtual environments
+venv/
+.env/
+.venv/
+
+# OS files
+.DS_Store
+Thumbs.db
