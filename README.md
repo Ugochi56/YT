@@ -15,14 +15,14 @@ __   __ _____ ____  _          ____ _     ___
 
 ---
 
-## 💡 Why We Built This
+## 💡 Why I Built This
 
-Our team frequently requires high-quality media assets (B-roll, reference clips, demo audio, and mockups) from various social media and video platforms. Relying on sketchy web-based downloaders introduces security risks, popups, and inconsistent output qualities. 
+Teams and creators frequently require high-quality media assets (B-roll, reference clips, demo audio, and mockups) from various social media and video platforms. Relying on sketchy web-based downloaders introduces security risks, popups, and inconsistent output qualities. 
 
-We built this command-line utility to serve as a **secure, unified, and automated pipeline** for the team. It ensures:
+I built this command-line utility to serve as a **secure, unified, and automated pipeline** for developers and content teams. It ensures:
 1. **Safety & Speed**: Clean downloading directly from terminal without external web dependencies.
 2. **Upscaling Capability**: Easily upscale reference clips to 4K resolution (3840x2160) for high-fidelity presentations.
-3. **No Setup Friction**: Automatically embeds and configures the required FFmpeg engine so team members don't have to manually install or configure system environment paths.
+3. **No Setup Friction**: Automatically embeds and configures the required FFmpeg engine so users don't have to manually install or configure system environment paths.
 4. **Clean Asset Management**: Sanitizes names and neatly organizes downloaded files into distinct, clean directories automatically.
 
 ---
@@ -90,4 +90,4 @@ python ytdl.py
 
 ## 👥 Contributing
 
-We encourage team members to submit issues, features, or pull requests. Feel free to extend platform configurations or add new post-processing options!
+Contributions, bug reports, and suggestions are welcome! Feel free to submit issues, features, or pull requests to extend platform configurations or add new post-processing options.
