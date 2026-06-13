@@ -1,96 +1,93 @@
-# YTDL-CLI
+# 🚀 Multi-Platform Video Downloader & 4K Upscaler
 
-```
+```text
 __   __ _____ ____  _          ____ _     ___ 
 \ \ / /|_   _|  _ \| |        / ___| |   |_ _|
  \   /   | | | | | | |   ____| |   | |    | | 
   | |    | | | |_| | |__|____| |___| |___ | | 
   |_|    |_| |____/|_____|    \____|_____|___|
+
+  Advanced Media Downloader  //  powered by yt-dlp + ffmpeg
 ```
 
-> Advanced YouTube video downloader with an interactive CLI — powered by `yt-dlp` and `ffmpeg`.
+> [!NOTE]  
+> A professional, interactive CLI utility engineered to download, format, and upscale video and audio assets from YouTube, TikTok, Instagram, and other major media platforms.
 
 ---
 
-## Features
+## 💡 Why We Built This
 
-- 🎬 Download any YouTube video at any available quality (144p → 4K)
-- 🔊 Auto-merges best video + best audio into a single `.mkv` file
-- 🎵 Audio-only mode (downloads as high-quality `.mp3`)
-- 📁 Each download is automatically saved into its own named folder
-- 🔁 Duplicate detection — skip, re-download, or overwrite existing files
-- 🧹 Auto-cleanup of leftover partial/temp files from interrupted downloads
-- 💻 Stylish Linux-style terminal interface using `rich`
+Our team frequently requires high-quality media assets (B-roll, reference clips, demo audio, and mockups) from various social media and video platforms. Relying on sketchy web-based downloaders introduces security risks, popups, and inconsistent output qualities. 
 
----
-
-## Requirements
-
-- Python 3.8+
-- `ffmpeg` (bundled automatically via `imageio-ffmpeg`)
+We built this command-line utility to serve as a **secure, unified, and automated pipeline** for the team. It ensures:
+1. **Safety & Speed**: Clean downloading directly from terminal without external web dependencies.
+2. **Upscaling Capability**: Easily upscale reference clips to 4K resolution (3840x2160) for high-fidelity presentations.
+3. **No Setup Friction**: Automatically embeds and configures the required FFmpeg engine so team members don't have to manually install or configure system environment paths.
+4. **Clean Asset Management**: Sanitizes names and neatly organizes downloaded files into distinct, clean directories automatically.
 
 ---
 
-## Installation
+## ✨ Features
 
-```bash
-git clone https://github.com/YOUR_USERNAME/ytdl-cli.git
-cd ytdl-cli
-pip install -r requirements.txt
-```
+*   **Multi-Platform Compatibility**: Native prompts optimized for **YouTube**, **TikTok**, **Instagram**, and general video URLs.
+*   **4K Upscaling Engine**: Post-processes and upscales video streams to 4K (3840x2160) using a high-quality **Lanczos scaling filter** via FFmpeg.
+*   **Targeted Platform Formatting**: 
+    *   **YouTube**: Displays full resolution stream tables (1080p, 720p, etc.) and outputs in high-fidelity `.mkv` to avoid quality-loss re-encoding.
+    *   **TikTok & Instagram**: Displays simplified menus (Best Quality / Audio Only) and outputs directly in `.mp4` for maximum compatibility on mobile devices and slide decks.
+*   **Smart Duplicate Management**: Prompts to skip, re-download (add to folder), or overwrite if a target video directory already exists.
+*   **Network Resiliency & Cleanup**: Built-in download retries and automatic cleanup routines to rescue or prune partial files from interrupted downloads.
+*   **Interactive Session Loop**: Keeps the session alive, asking the user whether to continue with another download or exit.
 
 ---
 
-## Usage
+## 🛠️ Requirements
 
+*   **Python 3.8+**
+*   **FFmpeg** (automatically resolved and bundled via `imageio-ffmpeg`; no system installation or environment configuration required).
+
+---
+
+## 🚀 Installation & Setup
+
+1. **Clone the repository**:
+    ```bash
+    git clone https://github.com/YOUR_TEAM_OR_ORG/ytdl-cli.git
+    cd ytdl-cli
+    ```
+
+2. **Install dependencies**:
+    ```bash
+    pip install -r requirements.txt
+    ```
+
+---
+
+## 💻 Usage
+
+To launch the interactive tool, execute:
 ```bash
 python ytdl.py
 ```
 
-You will be prompted to paste a YouTube URL and select your desired quality:
-
-```
-[?] Enter YouTube URL: https://www.youtube.com/watch?v=...
-[*] Extracting media metadata...
-[+] Target locked: Video Title Here
-
-[*] Available Format Streams:
-  0. Best Quality (Auto-merge Video + Audio)
-  1. Audio Only (Highest Bitrate MP3)
-  2. 2160p Video + Best Audio
-  3. 1440p Video + Best Audio
-  4. 1080p Video + Best Audio
-  ...
-
-[?] Select stream ID (0):
-```
-
-After downloading, the file is placed in a dedicated folder:
-
-```
-ytdl-cli/
-  └── Video Title Here/
-        └── Video Title Here.mkv
-```
+### Flow Walkthrough:
+1. **Platform Selection**: Select the platform you are downloading from.
+2. **URL Input**: Paste your target video or audio link.
+3. **Format Options**: Choose your preferred download option (best quality, audio-only, or select custom resolutions for YouTube).
+4. **4K Upscaling**: Decide whether to upscale your video output to 4K (3840x2160).
+5. **Session Control**: After download completion, choose to either download another asset or exit the CLI cleanly.
 
 ---
 
-## Why `.mkv`?
-
-YouTube stores its highest quality video streams (1080p+) as separate video and audio tracks using modern codecs (VP9/AV1). The `.mkv` container is used because it natively supports these formats without re-encoding, preserving maximum quality.
-
----
-
-## Dependencies
+## 📦 Core Dependencies
 
 | Package | Purpose |
-|---|---|
-| `yt-dlp` | YouTube metadata extraction and downloading |
-| `imageio-ffmpeg` | Bundled `ffmpeg` binary (no system install needed) |
-| `rich` | Terminal UI formatting and styling |
+| :--- | :--- |
+| **`yt-dlp`** | Active, industry-standard engine for media metadata extraction and stream fetching. |
+| **`imageio-ffmpeg`** | Packages the precompiled FFmpeg binaries, eliminating OS-specific configuration friction. |
+| **`rich`** | Powers the modern interactive terminal UI, colors, prompts, and tables. |
 
 ---
 
-## License
+## 👥 Contributing
 
-MIT
+We encourage team members to submit issues, features, or pull requests. Feel free to extend platform configurations or add new post-processing options!
